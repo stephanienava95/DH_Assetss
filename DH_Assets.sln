@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DH_Assets", "DH_Assets\DH_Assets.csproj", "{B95FC5E9-D387-42E4-856C-A4F851A0678F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B95FC5E9-D387-42E4-856C-A4F851A0678F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95FC5E9-D387-42E4-856C-A4F851A0678F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95FC5E9-D387-42E4-856C-A4F851A0678F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95FC5E9-D387-42E4-856C-A4F851A0678F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D2744EA-EBA6-45E0-B799-D6533B2DC4E4}
+	EndGlobalSection
+EndGlobal
