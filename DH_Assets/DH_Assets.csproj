@@ -13,4 +13,9 @@
     <None Include="wwwroot\js\scripts.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.3.2" />
+    <PackageReference Include="Modernizr" Version="2.8.3" />
+  </ItemGroup>
+
 </Project>

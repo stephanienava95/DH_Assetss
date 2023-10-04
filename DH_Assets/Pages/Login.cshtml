@@ -1,0 +1,54 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DH_Assets.styles.css" asp-append-version="true" />
+
+</head>
+
+<div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="~/assets/Business.jpeg" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">HACIENDA</h1>
+            <p>Crear nueva cuenta</p>
+            <div class="form-group">
+                <input id="txtNombre" runat="server" class="form-control" placeholder="Nombre" name="Nombre" autofocus>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUserName" Enabled="true"
+                                            Display="None" ValidationGroup="Nombre" Text="Required" CssClass="mpr-validation-messages" />
+            </div>
+
+            <div class="form-group">
+                <input id="txtApellidos" runat="server" class="form-control" placeholder="Apellidos" name="Nombre" autofocus>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtApellidos" Enabled="true"
+                                            Display="None" ValidationGroup="Apellidos" Text="Required" CssClass="mpr-validation-messages" />
+            </div>
+            <div class="form-group">
+                <input id="txtUserName" runat="server" class="form-control" placeholder="User Name" name="email" autofocus>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUserName" Enabled="true"
+                                            Display="None" ValidationGroup="login" Text="Required" CssClass="mpr-validation-messages" />
+            </div>
+
+            <div class="form-group">
+                <input id="txtPassword" runat="server" class="form-control" placeholder="Password" name="password" type="password" value="">
+                <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtPassword" Enabled="true" ValidationGroup="login"
+                                            Display="None" Text="Required" CssClass="mpr-validation-messages" />
+            </div>
+            <br />
+            <asp:LinkButton ID="lnkLogin" runat="server" style="background-color:#2ebf63;" class="btn btn-lg btn-block" ValidationGroup="login"
+                            OnClick="btnLogin_Click">Login</asp:LinkButton>
+        </div>
+
+    </div>
+    <br />
+    <br />
+    <br />
+</div>
+ 
+ 

@@ -10796,34 +10796,68 @@ textarea.form-control-lg {
   }
 }
 @media print {
-  .d-print-inline {
-    display: inline !important;
-  }
-  .d-print-inline-block {
-    display: inline-block !important;
-  }
-  .d-print-block {
-    display: block !important;
-  }
-  .d-print-grid {
-    display: grid !important;
-  }
-  .d-print-table {
-    display: table !important;
-  }
-  .d-print-table-row {
-    display: table-row !important;
-  }
-  .d-print-table-cell {
-    display: table-cell !important;
-  }
-  .d-print-flex {
-    display: flex !important;
-  }
-  .d-print-inline-flex {
-    display: inline-flex !important;
-  }
-  .d-print-none {
-    display: none !important;
-  }
+    .d-print-inline {
+        display: inline !important;
+    }
+
+    .d-print-inline-block {
+        display: inline-block !important;
+    }
+
+    .d-print-block {
+        display: block !important;
+    }
+
+    .d-print-grid {
+        display: grid !important;
+    }
+
+    .d-print-table {
+        display: table !important;
+    }
+
+    .d-print-table-row {
+        display: table-row !important;
+    }
+
+    .d-print-table-cell {
+        display: table-cell !important;
+    }
+
+    .d-print-flex {
+        display: flex !important;
+    }
+
+    .d-print-inline-flex {
+        display: inline-flex !important;
+    }
+
+    .d-print-none {
+        display: none !important;
+    }
+
+    Content2 {
+        margin-bottom: 40%;
+        margin-top: 40%;
+    }
+
+
+    .btn btn-lg btn-block {
+        text-align: center;
+        background-color: #2ebf63;
+        align-self:center;
+    }
+
+    .glyphicon, glyphicon, #glyphicon {
+        color: red;
+        position: center;
+        align-content: center;
+        font-size: 50px;
+    }
+    .glyphicon glyphicon-refresh, glyphicon glyphicon-refresh {
+        color: red;
+        position: center;
+        align-content: center;
+        font-size: 50px;
+    }
 }
