@@ -52,8 +52,8 @@
                 </div>
     
                 <div class="form-group">
-                    <input id="txtPassword" runat="server" class="form-control" placeholder="Password" name="password" type="password" value="">
-                    <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtPassword" Enabled="true" ValidationGroup="login"
+                    <input id="txtPassword" runat="server" class="form-control" placeholder="OTP" name="OTP" type="OTP" value="">
+                    <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtOTP" Enabled="true" ValidationGroup="OTP"
                                                 Display="None" Text="Required" CssClass="mpr-validation-messages" />
                 </div>
 
@@ -85,26 +85,5 @@
     </div>
     <h1 class="font-weight-light">DASHBOARD</h1>
     <div class="col-lg-12"><img class="img-fluid rounded mb-4 mb-lg-0" src="~/assets/google.png" alt="..." /></div>
-  @*   <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="container">
-        <div class="dashboard">
-            <button class="toggle-button" onclick="toggleSection('company')">Compañia</button>
-            <button class="toggle-button" onclick="toggleSection('consultants')">Consultores</button>
-            <button class="toggle-button" onclick="toggleSection('teams')">Equipos</button>
-            <div class="section company" id="company-section">
-                <h2>Compañia</h2>
-                <!-- Content for Compañia section -->
-            </div>
-            <div class="section consultants" id="consultants-section">
-                <h2>Consultores</h2>
-                <!-- Content for Consultores section -->
-            </div>
-            <div class="section teams" id="teams-section">
-                <h2>Equipos</h2>
-                <!-- Content for Equipos section -->
-            </div>
-        </div>
-        </div>
-    </div> *@
     </body>
 </html>
