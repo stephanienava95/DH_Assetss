@@ -3,6 +3,35 @@
 @{
     ViewData["Title"] = "Company Information";
 }
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell");
+        const userList = document.getElementById("user-list");
+
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell2");
+        const userList = document.getElementById("user-list2");
+
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell3");
+        const userList = document.getElementById("user-list3");
+
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+
+</script>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,7 +82,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Tres monjitas</td>
+                   <td class="clickable-cell">Tres monjitas
+                            <div id="user-list" class="hidden">
+                                <ul>
+                                    <li>Carlos Arroyo</li>
+                                    <li>Melvin Candelaria</li>
+                                    <li>Carla Luna</li>
+                                </ul>
+                            </div>
+                   </td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
                     <td>Oficial Principal</td>
@@ -65,7 +102,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Netwave</td>
+                   <td class="clickable-cell2"> Netwave
+                            <div id="user-list2" class="hidden">
+                                <ul>
+                                    <li>Julia Santos</li>
+                                    <li>Felix Velez</li>
+                                    <li>Viviana De Pinho</li>
+                                </ul>
+                            </div>
+                   </td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
                     <td>Soporte</td>
@@ -78,7 +123,15 @@
                             </td>
                     </tr>
                  <tr>
-                    <td>Amigo</td>
+                        <td class="clickable-cell3">   T Mobile
+                            <div id="user-list3" class="hidden">
+                                <ul>
+                                    <li>Maria Santos</li>
+                                    <li>Candelaria Soliz</li>
+                                    <li>Ingrid De Pinho</li>
+                                </ul>
+                            </div>
+                        </td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
                     <td>Soporte</td>
