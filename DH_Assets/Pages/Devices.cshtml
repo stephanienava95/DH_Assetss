@@ -20,9 +20,19 @@
     <!-- Page Content-->
     <div class="container px-4 px-lg-5">
         <!-- Heading Row-->
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
-
-            <h1>Dispositivos</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Dispositivos</h1>
+                </div>
+                <div class="col-md-3 text-right">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <div class="col-sm-1 text-right">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </div>
             <p>
                 Sección dedicada a la información básica de la compañía. Esta información es necesaria para asignarle los datos
                 al inventario de Dispositivos.
@@ -32,47 +42,51 @@
             <thead>
                 <tr>
                             <th scope="col">Nombre de Compañía</th>
-                            <th scope="col">Dirección</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">Compañía</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">N. Serie</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Color</th>
                             <th scope="col">Estatus</th>
                             <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Company A</td>
-                    <td>123 Main St, City, Country</td>
-                    <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
-                    <td>info@companya.com</td>
+                    <td>Tres Monjitas</td>
+                    <td>HP</td>
+                    <td>ENVY SERIES 2</td>
+                    <td>378237283V7827283HJK</td>
+                    <td>Gris</td>
+                    <td>LAPTOP</td>
                     <td>Active</td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                    <span class="glyphicon glyphicon-edit"></span>
-                                </button>
-                            </td>
-                        </tr>
+                     <td>
+                     <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                       <span class="glyphicon glyphicon-edit"></span>
+                     </button>
+                      </td>
+                    </tr>
                 <tr>
-                    <td>Company B</td>
-                    <td>456 Elm St, City, Country</td>
-                    <td>(987) 654-3210</td>
-                    <td>Support</td>
-                    <td>contact@companyb.com</td>
-                    <td><span class="badge bg-danger">Inactive</span></td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                    <span class="glyphicon glyphicon-edit"></span>
-                                </button>
-                            </td>
-                        </tr>
+                  <td>NUC University</td>
+                   <td>Dell</td>
+                   <td>Dell 234</td>
+                   <td>2435U37283V7827283HJD</td>
+                   <td>Gris</td>
+                   <td>LAPTOP</td>
+                   <td>Active</td>
+                    <td>
+                     <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                       <span class="glyphicon glyphicon-edit"></span>
+                     </button>
+                      </td>
+                    </tr>
                 <!-- Add more rows as needed -->
             </tbody>
+
         </table>
+       
     </div>
    </div>
- </div>
     <br />
     <br />
     <br />
@@ -93,8 +107,12 @@
 
                 <!-- Encabezado del Modal -->
                 <div class="modal-header">
+                    <div class="col-md-7">
                     <h5 class="modal-title">Editar información de los Dispositivos</h5>
-                    <button type="button" id="closebutton" style="align-content:end" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="w-100">
+                    <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
                 </div>
 
                 <!-- Contenido del Modal -->
@@ -110,24 +128,24 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtApellidos" runat="server" class="form-control" placeholder="CompanyAddress" name="Dirección" autofocus>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyAddress" Enabled="true"
-                                                            Display="None" ValidationGroup="CompanyAddress" CssClass="mpr-validation-messages" />
+                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtMarca" Enabled="true"
+                                                            Display="None" ValidationGroup="Marca" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="CompanyPhone" name="Teléfono" autofocus>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyPhone" Enabled="true"
-                                                            Display="None" ValidationGroup="CompanyPhone" CssClass="mpr-validation-messages" />
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtModelo" Enabled="true"
+                                                            Display="None" ValidationGroup="Modelo" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtPassword" runat="server" class="form-control" placeholder="CompanyData" name="Compañía">
-                                <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtCompanyData" Enabled="true"
+                                <input id="txtPassword" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
+                                <asp:RequiredFieldValidator ID="NSerie" runat="server" ControlToValidate="txtNSerie" Enabled="true"
                                                             Display="None" Text="Required" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
@@ -135,11 +153,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="CompanyEmail" name="Email" autofocus>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyEmail" Enabled="true"
-                                                            Display="None" ValidationGroup="CompanyEmail" CssClass="mpr-validation-messages" />
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion" Enabled="true"
+                                                            Display="None" ValidationGroup="Descripción" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtColor" Enabled="true"
+                                                            Display="None" ValidationGroup="Color" CssClass="mpr-validation-messages" />
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="dropdown">
@@ -153,6 +180,19 @@
                                 </div>
                             </div>
                         </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="statusDropdown" data-toggle="dropdown">
+                                            Check
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="statusDropdown">
+                                            <a class="dropdown-item" href="#">Check In</a>
+                                            <a class="dropdown-item" href="#">Check Out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
                     </div>
                     <!-- Pie del Modal -->
                     <div class="modal-footer">

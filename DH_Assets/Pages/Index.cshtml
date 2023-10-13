@@ -52,7 +52,7 @@
                 </div>
     
                 <div class="form-group">
-                    <input id="txtPassword" runat="server" class="form-control" placeholder="OTP" name="OTP" type="OTP" value="">
+                    <input id="txtPassword" runat="server" class="form-control" placeholder="OTP" name="OTP" autofocus>
                     <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtOTP" Enabled="true" ValidationGroup="OTP"
                                                 Display="None" Text="Required" CssClass="mpr-validation-messages" />
                 </div>
@@ -72,15 +72,21 @@
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
 
         <div class="col-md-4 mb-6">
-          <p1 class="mpr-title-header"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;Entrar y/o Actualizar equipo</p1>
+          <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-refresh" aria-hidden="true" href="Devices">
+              </a>&nbsp;Entrar y/o Actualizar equipo</p1>
           </div>
      
            <div class="col-md-4 mb-6">
-            <p1 class="mpr-title-header"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;Ver equipo pendiente por aprobar</p1>
+            <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-eye-open" aria-hidden="true" href="Devices">
+                </a>&nbsp;Ver equipo pendiente por aprobar</p1>
           </div>
 
            <div class="col-md-4 mb-6">
-            <p1 class="mpr-title-header"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;Equipo aprobado por remover</p1>
+            <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-trash" aria-hidden="true" href="Devices">
+            </a>&nbsp;Equipo aprobado por remover</p1>
            </div>
     </div>
     <h1 class="font-weight-light">DASHBOARD</h1>

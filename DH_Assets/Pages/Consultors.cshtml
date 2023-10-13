@@ -19,9 +19,19 @@
     <!-- Page Content-->
     <div class="container px-4 px-lg-5">
         <!-- Heading Row-->
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
-  
-        <h1>Consultores</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Consultores</h1>
+                </div>
+                <div class="col-md-3 text-right">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <div class="col-sm-1 text-right">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </div>
 
         <p>
                 Sección dedicada a la información básica de la compañía. Esta información es necesaria para asignarle los datos
@@ -44,7 +54,7 @@
                     <td>Ramon Vera</td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
+                    <td>Tres Monjitas</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
                         <td>
@@ -57,7 +67,7 @@
                     <td>Karina Faria</td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
-                    <td>Support</td>
+                    <td>StarBucks</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -70,7 +80,7 @@
                         <td>Amanda Arcel</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
-                        <td>Support</td>
+                        <td>T Mobile</td>
                         <td>contact@companyb.com</td>
                         <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -83,7 +93,7 @@
                         <td>Melvin Nieves</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
-                        <td>Support</td>
+                        <td>Sprint</td>
                         <td>contact@companyb.com</td>
                         <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -96,7 +106,7 @@
                         <td>Stephanie Nava</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
-                        <td>Support</td>
+                        <td>Amigo</td>
                         <td>contact@companyb.com</td>
                         <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -109,7 +119,7 @@
                         <td>Carlos Acuna </td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
-                        <td>Support</td>
+                        <td>Claro</td>
                         <td>contact@companyb.com</td>
                         <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -122,7 +132,7 @@
                         <td>Eduardo Joglar</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
-                        <td>Support</td>
+                        <td>MCS</td>
                         <td>contact@companyb.com</td>
                         <td><span class="badge bg-danger">Inactive</span></td>
                         <td>
@@ -134,7 +144,18 @@
             </tbody>
         </table>
       </div>
-    </div>
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Siguiente</a>
+        </li>
+    </ul>
     <!------------------------- MODAL------------------------------>
 
     <div class="modal" id="miModal">
@@ -143,8 +164,12 @@
 
                 <!-- Encabezado del Modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title">Editar información de los Consultores</h5>
-                    <button type="button" id="closebutton" style="align-content:end" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    <div class="col-md-7">
+                        <h5 class="modal-title">Editar información de los Consultores</h5>
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
                 </div>
 
                 <!-- Contenido del Modal -->
