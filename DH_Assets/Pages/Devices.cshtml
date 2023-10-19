@@ -36,7 +36,6 @@
                             <th scope="col">Color</th>
                             <th scope="col">Fecha Registro</th>
                             <th scope="col">Estatus</th>
-                            <th scope="col">Tipo de Dispositivo</th>
                             <th scope="col">Editar</th>
                         </tr>
                     </thead>
@@ -48,23 +47,6 @@
                             <td>Negra</td>
                             <td>10/06/2023</td>
                             <td>Active</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-toggle="dropdown">
-                                        Tipo de Dispositivo
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
-                                        <a class="dropdown-item" href="#">Silla</a>
-                                        <a class="dropdown-item" href="#">Monitor / Pantalla</a>
-                                        <a class="dropdown-item" href="#">Laptop</a>
-                                        <a class="dropdown-item" href="#">Router</a>
-                                        <a class="dropdown-item" href="#">Impresora</a>
-                                        <a class="dropdown-item" href="#">Desktop</a>
-                                        <a class="dropdown-item" href="#">WIFI Repeater</a>
-                                        <a class="dropdown-item" href="#">Otros ________________</a>
-                                    </div>
-                                </div>
-                            </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -78,23 +60,6 @@
                             <td>Negra</td>
                             <td>10/06/2023</td>
                             <td><span class="badge bg-danger">Inactive</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-toggle="dropdown">
-                                        Tipo de Dispositivo
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
-                                        <a class="dropdown-item" href="#">Silla</a>
-                                        <a class="dropdown-item" href="#">Monitor / Pantalla</a>
-                                        <a class="dropdown-item" href="#">Laptop</a>
-                                        <a class="dropdown-item" href="#">Router</a>
-                                        <a class="dropdown-item" href="#">Impresora</a>
-                                        <a class="dropdown-item" href="#">Desktop</a>
-                                        <a class="dropdown-item" href="#">WIFI Repeater</a>
-                                        <a class="dropdown-item" href="#">Otros ________________</a>
-                                    </div>
-                                </div>
-                            </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -215,6 +180,29 @@
                             </div>
                         </div>
                     </div>
+
+
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                   <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-                                     toggle="dropdown">
+                                        Tipo de Dispositivo
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
+                                        <a class="dropdown-item" href="#">Silla</a>
+                                        <a class="dropdown-item" href="#">Monitor / Pantalla</a>
+                                        <a class="dropdown-item" href="#">Laptop</a>
+                                        <a class="dropdown-item" href="#">Router</a>
+                                        <a class="dropdown-item" href="#">Impresora</a>
+                                        <a class="dropdown-item" href="#">Desktop</a>
+                                        <a class="dropdown-item" href="#">WIFI Repeater</a>
+                                        <a class="dropdown-item" href="#">Otros ________________</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Pie del Modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -232,4 +220,3 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
-
