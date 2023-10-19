@@ -40,6 +40,10 @@
                 <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtPassword" Enabled="true" ValidationGroup="login"
                                             Display="None" Text="Required" CssClass="mpr-validation-messages" />
             </div>
+            <div class="col-lg-12">
+                <a class="nav-link" style="text-align:center" id="NewAccount" href="Login">¿Olvidó su contraseña?</a>
+            </div>
+            <br />
             <br />
             <asp:LinkButton ID="lnkLogin" runat="server" style="background-color:#2ebf63;" class="btn btn-lg btn-block" ValidationGroup="login"
                             OnClick="btnLogin_Click">Login</asp:LinkButton>

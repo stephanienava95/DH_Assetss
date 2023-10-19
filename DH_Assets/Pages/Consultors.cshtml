@@ -5,15 +5,12 @@
 }
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DH_Assets.styles.css" asp-append-version="true" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Page Content-->
@@ -45,6 +42,7 @@
                         <th scope="col">Teléfono</th>
                         <th scope="col">Compañía</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Dispositivos</th>
                         <th scope="col">Estatus</th>
                         <th scope="col">Editar</th>
                 </tr>
@@ -56,20 +54,30 @@
                     <td>(123) 456-7890</td>
                     <td>Tres Monjitas</td>
                     <td>info@companya.com</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
                     <td>Active</td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
                 <tr>
                     <td>Karina Faria</td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
                     <td>StarBucks</td>
                     <td>contact@companyb.com</td>
-                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td>Active</td>
                         <td>
                             <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                 <span class="glyphicon glyphicon-edit"></span>
@@ -82,65 +90,90 @@
                         <td>(987) 654-3210</td>
                         <td>T Mobile</td>
                         <td>contact@companyb.com</td>
-                        <td><span class="badge bg-danger">Inactive</span></td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
                     <tr>
                         <td>Melvin Nieves</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
                         <td>Sprint</td>
                         <td>contact@companyb.com</td>
-                        <td><span class="badge bg-danger">Inactive</span></td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
                     <tr>
                         <td>Stephanie Nava</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
                         <td>Amigo</td>
                         <td>contact@companyb.com</td>
-                        <td><span class="badge bg-danger">Inactive</span></td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
                     <tr>
                         <td>Carlos Acuna </td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
                         <td>Claro</td>
                         <td>contact@companyb.com</td>
-                        <td><span class="badge bg-danger">Inactive</span></td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
                     <tr>
                         <td>Eduardo Joglar</td>
                         <td>456 Elm St, City, Country</td>
                         <td>(987) 654-3210</td>
                         <td>MCS</td>
                         <td>contact@companyb.com</td>
-                        <td><span class="badge bg-danger">Inactive</span></td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal2" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+                    </td>
+                    <td><span class="badge bg-danger">Inactive</span></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
       </div>
@@ -157,7 +190,6 @@
         </li>
     </ul>
     <!------------------------- MODAL------------------------------>
-
     <div class="modal" id="miModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -238,8 +270,77 @@
             </div>
         </div>
     </div>
+
+
+    <!------------------------- MODAL------------------------------>
+    <div class="modal" id="miModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <br />
+                <h6 class="modal-title">
+                    El tipo de dispositivo que desea registrar requiere autorización de Desktop Support
+                </h6>
+                <!-- Contenido del Modal -->
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-toggle="dropdown">
+                                        Tipo de Dispositivo
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
+                                        <a class="dropdown-item" href="#">Silla</a>
+                                        <a class="dropdown-item" href="#">Monitor / Pantalla</a>
+                                        <a class="dropdown-item" href="#">Laptop</a>
+                                        <a class="dropdown-item" href="#">Router</a>
+                                        <a class="dropdown-item" href="#">Impresora</a>
+                                        <a class="dropdown-item" href="#">Desktop</a>
+                                        <a class="dropdown-item" href="#">WIFI Repeater</a>
+                                        <a class="dropdown-item" href="#">Otros ________________</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-toggle="dropdown">
+                                        Es una Laptop o Desktop?
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
+                                        <a class="dropdown-item" href="#">Desktop</a>
+                                        <a class="dropdown-item" href="#">Laptop</a>
+                                        <a class="dropdown-item" href="#">N/A</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie del Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Saltar</button>
+                        <button type="button" class="btn" style="background-color:#2ebf63;">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
