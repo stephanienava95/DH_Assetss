@@ -81,6 +81,7 @@
                     <th scope="col">Contacto</th>
                     <th scope="col">Email</th>
                     <th scope="col">Estatus</th>
+                    <th scope="col">Contratistas</th>
                     <th scope="col">Editar</th>
                 </tr>
             </thead>
@@ -100,6 +101,11 @@
                     <td>Oficial Principal</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                      <td>
                     <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                         <span class="glyphicon glyphicon-edit"></span> </button>
@@ -120,6 +126,11 @@
                     <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -141,6 +152,11 @@
                     <td>Soporte</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                      <td>
                        <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                               <span class="glyphicon glyphicon-edit"></span>
@@ -155,6 +171,11 @@
                     <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -168,6 +189,11 @@
                     <td>Asistente</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -181,6 +207,11 @@
                     <td>Servicio</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -194,6 +225,11 @@
                     <td>Soporte</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -207,6 +243,11 @@
                     <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
@@ -311,6 +352,90 @@
                     <button type="button" class="btn btn-primary">Guardar Cambios</button>
                 </div>
               </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------- MODAL CONTRACTORS------------------------------>
+
+    <div class="modal" id="ContractorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                        <h5 class="modal-title">Editar información de los Contratistas</h5>
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Contenido del Modal -->
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
+                                                            Display="None" ValidationGroup="CompanyName" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtApellidos" runat="server" class="form-control" placeholder="CompanyAddress" name="Dirección" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyAddress" Enabled="true"
+                                                            Display="None" ValidationGroup="CompanyAddress" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="CompanyPhone" name="Teléfono" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyPhone" Enabled="true"
+                                                            Display="None" ValidationGroup="CompanyPhone" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtPassword" runat="server" class="form-control" placeholder="CompanyData" name="Compañía">
+                                <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtCompanyData" Enabled="true"
+                                                            Display="None" Text="Required" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="CompanyEmail" name="Email" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyEmail" Enabled="true"
+                                                            Display="None" ValidationGroup="CompanyEmail" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-success dropdown-toggle btn-sm btn-block" type="button" id="statusDropdown" data-toggle="dropdown">
+                                        Estatus
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="statusDropdown">
+                                        <a class="dropdown-item" href="#">Activo</a>
+                                        <a class="dropdown-item" href="#">Inactivo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pie del Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
