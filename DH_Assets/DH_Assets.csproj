@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.2" />
+    <PackageReference Include="Fable.PopperJS" Version="1.0.0" />
     <PackageReference Include="Modernizr" Version="2.8.3" />
   </ItemGroup>
 

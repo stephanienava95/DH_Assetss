@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Devices";
 }
-
 <html lang="en">
 
 <head>
@@ -13,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -38,6 +38,7 @@
                             <th scope="col">Tipo de Dispositivo</th>
                             <th scope="col">Estatus</th>
                             <th scope="col">Editar</th>
+                            <th scope="col">Añadir</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +55,11 @@
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </button>
                             </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal3" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Dell</td>
@@ -66,6 +72,11 @@
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal3" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </td>
                         </tr>
@@ -110,7 +121,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="CompanyName" name="Nombre de la Compañía" autofocus>
+                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía" name="Companyname" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
                                                             Display="None" ValidationGroup="CompanyName" CssClass="mpr-validation-messages" />
                             </div>
@@ -158,54 +169,42 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <div class="dropdown">
-                                    <button class="btn btn-success dropdown-toggle btn-sm btn-block" type="button" id="statusDropdown" data-toggle="dropdown">
-                                        Estatus
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="statusDropdown">
-                                        <a class="dropdown-item" href="#">Activo</a>
-                                        <a class="dropdown-item" href="#">Inactivo</a>
+                                        <select name="statusDropdown" id="statusDropdown" class=" btn btn-success dropdown-toggle btn-sm btn-block">
+                                            <option selected>Estatus</option>
+                                            <option value="Activo">Activo</option>
+                                            <option value="Inactivo">Inactivo</option>
+                                        </select>
+
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="statusDropdown" data-toggle="dropdown">
-                                        Check
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="statusDropdown">
-                                        <a class="dropdown-item" href="#">Check In</a>
-                                        <a class="dropdown-item" href="#">Check Out</a>
+                                <select name="Check" id="Check" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
+                                    <option selected>Check In </option>
+                                    <option value="CheckOut">Check Out</option>
+                                </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-
+           
                       <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                   <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle btn-sm btn-block" type="button" id="TipoDispositivo" data-                                     toggle="dropdown">
-                                        Tipo de Dispositivo
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="TipoDispositivo">
-                                        <a class="dropdown-item" href="#">Silla</a>
-                                        <a class="dropdown-item" href="#">Monitor / Pantalla</a>
-                                        <a class="dropdown-item" href="#">Laptop</a>
-                                        <a class="dropdown-item" href="#">Router</a>
-                                        <a class="dropdown-item" href="#">Impresora</a>
-                                        <a class="dropdown-item" href="#">Desktop</a>
-                                        <a class="dropdown-item" href="#">WIFI Repeater</a>
-                                        <a class="dropdown-item" href="#">Otros ________________</a>
-                                    </div>
-                                </div>
+                        <select name="TipoDispositivo" id="TipoDispositivo" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
+                              <option selected>Tipo de Dispositivo</option>
+                              <option value="Monitor" href="#miModal2" id="miModal2">Monitor / Pantalla</option>
+                              <option value="Laptop" href="#" id="miModal2">Laptop</option>
+                              <option value="Router" href="#" id="miModal2">Router</option>
+                              <option value="Impresora" href="#" id="miModal2">Impresora</option>
+                              <option value="Desktop" href="#" id="miModal2">Desktop</option>
+                              <option value="WIFIRepeater">WIFI Repeater</option>
+                              <option value="Otros">Otros ________________</option>
+                          </select>
                             </div>
-                        </div>
-                    </div>
+                         </div>
+                       </div>
+
                     <!-- Pie del Modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -215,11 +214,178 @@
             </div>
         </div>
     </div>
+
+
+
+    <!------------------------- MODAL2------------------------------>
+    <div class="modal" id="miModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <br />
+                <h6 class="modal-title">
+                    El Dispositivo que esta tratando de registrar debe pasar por la autorización de apoyo tecnico, favor de solicitarlo a traves de esa forma:
+                </h6>
+                <!-- Contenido del Modal -->
+
+                    <!-- Pie del Modal -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" href="Devices">Saltar</button>
+                        <button type="button" class="btn" style="background-color:#2ebf63;">Enviar</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!------------------------- MODAL3 ANADIR------------------------------>
+    <div class="modal" id="miModal3">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                        <h5 class="modal-title">Añadir Dispositivos</h5>
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Contenido del Modal -->
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía" name="Companyname" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
+                                                            Display="None" ValidationGroup="CompanyName" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtMarca" Enabled="true"
+                                                            Display="None" ValidationGroup="Marca" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtModelo" Enabled="true"
+                                                            Display="None" ValidationGroup="Modelo" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtPassword" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
+                                <asp:RequiredFieldValidator ID="NSerie" runat="server" ControlToValidate="txtNSerie" Enabled="true"
+                                                            Display="None" Text="Required" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion" Enabled="true"
+                                                            Display="None" ValidationGroup="Descripción" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtColor" Enabled="true"
+                                                            Display="None" ValidationGroup="Color" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select name="statusDropdown" id="statusDropdown" class=" btn btn-success dropdown-toggle btn-sm btn-block">
+                                    <option selected>Estatus</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select name="Check" id="Check" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
+                                    <option selected>Check In </option>
+                                    <option value="CheckOut">Check Out</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select name="TipoDispositivo" id="TipoDispositivo" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
+                                    <option selected>Tipo de Dispositivo</option>
+                                    <option value="Monitor" href="#miModal2" id="miModal2">Monitor / Pantalla</option>
+                                    <option value="Laptop" href="#" id="miModal2">Laptop</option>
+                                    <option value="Router" href="#" id="miModal2">Router</option>
+                                    <option value="Impresora" href="#" id="miModal2">Impresora</option>
+                                    <option value="Desktop" href="#" id="miModal2">Desktop</option>
+                                    <option value="WIFIRepeater">WIFI Repeater</option>
+                                    <option value="Otros">Otros ________________</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie del Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="load"></div>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const select = document.getElementById('TipoDispositivo');
+            select.addEventListener('change', function () {
+                const selectedOption = select.value;
+
+                if (
+                    selectedOption === 'Laptop' ||
+                    selectedOption === 'Monitor' ||
+                    selectedOption === 'Router' ||
+                    selectedOption === 'Impresora' ||
+                    selectedOption === 'Desktop'
+                ) {
+                    $('#miModal2').modal('show');
+                    // const modalMessage = document.getElementById('modal-message');
+                    // document.getElementById('modal-message').innerHTML = "El Dispositivo que está tratando de registrar debe pasar por la autorización de apoyo técnico. Favor de solicitarlo a través de esa forma.";
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
