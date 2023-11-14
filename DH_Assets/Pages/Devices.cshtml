@@ -17,11 +17,22 @@
 
 <body>
     <!-- Page Content-->
-    <div class="container px-4 px-lg-5">
-        <!-- Heading Row-->
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
 
-            <h1>Dispositivos</h1>
+    <div class="container">
+
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-xs-1 text-right">
+                    <button type="button" data-toggle="modal" data-target="#miModal3" class="btn btn-primary n-sm btn-block">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
+            <div class="col-sm-1 text-left">
+                <h1>Dispositivos</h1>
+            </div>           
+            </div>
+        </div>
+
             <p>
                 Sección dedicada a la información básica de la compañía. Esta información es necesaria para asignarle los datos
                 al inventario de Dispositivos.
@@ -38,7 +49,6 @@
                             <th scope="col">Tipo de Dispositivo</th>
                             <th scope="col">Estatus</th>
                             <th scope="col">Editar</th>
-                            <th scope="col">Añadir</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,12 +64,7 @@
                                 <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </button>
-                            </td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#miModal3" class="btn btn-primary btn-sm btn-block">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </button>
-                            </td>
+                            </td>                           
                         </tr>
                         <tr>
                             <td>Dell</td>
@@ -74,18 +79,13 @@
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </button>
                             </td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#miModal3" class="btn btn-primary btn-sm btn-block">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </button>
-                            </td>
                         </tr>
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
+
 
     <br />
     <br />
@@ -118,55 +118,46 @@
                 <!-- Contenido del Modal -->
 
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row">                      
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía" name="Companyname" autofocus>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
-                                                            Display="None" ValidationGroup="CompanyName" CssClass="mpr-validation-messages" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
+                                <input id="txtMarca" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtMarca" Enabled="true"
                                                             Display="None" ValidationGroup="Marca" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
+                                <input id="txModelo" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtModelo" Enabled="true"
                                                             Display="None" ValidationGroup="Modelo" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtPassword" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
+                                <input id="txtNSerie" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
                                 <asp:RequiredFieldValidator ID="NSerie" runat="server" ControlToValidate="txtNSerie" Enabled="true"
                                                             Display="None" Text="Required" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
+                                <input id="txtDescripcion" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion" Enabled="true"
                                                             Display="None" ValidationGroup="Descripción" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
+                                <input id="txtColor" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtColor" Enabled="true"
                                                             Display="None" ValidationGroup="Color" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                         <select name="statusDropdown" id="statusDropdown" class=" btn btn-success dropdown-toggle btn-sm btn-block">
@@ -177,7 +168,8 @@
 
                                     </div>
                                 </div>
-
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="Check" id="Check" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
@@ -186,9 +178,7 @@
                                 </select>
                                     </div>
                                 </div>
-                            </div>
-           
-                      <div class="row">
+                          
                         <div class="col-md-6">
                             <div class="form-group">
                         <select name="TipoDispositivo" id="TipoDispositivo" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
@@ -204,45 +194,15 @@
                             </div>
                          </div>
                        </div>
-
+                  
                     <!-- Pie del Modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" data-target="#miModal2">Guardar Cambios</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-    <!------------------------- MODAL2------------------------------>
-    <div class="modal" id="miModal2">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Encabezado del Modal -->
-                <div class="modal-header">
-                    <div class="col-md-7">
-                    </div>
-                    <div class="w-100">
-                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
-                    </div>
-                </div>
-                <br />
-                <h6 class="modal-title">
-                    El Dispositivo que esta tratando de registrar debe pasar por la autorización de apoyo tecnico, favor de solicitarlo a traves de esa forma:
-                </h6>
-                <!-- Contenido del Modal -->
-
-                    <!-- Pie del Modal -->
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" href="Devices">Saltar</button>
-                        <button type="button" class="btn" style="background-color:#2ebf63;">Enviar</button>
-                    </div>
-                </div>
-            </div>
     </div>
 
     <!------------------------- MODAL3 ANADIR------------------------------>
@@ -266,52 +226,43 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía" name="Companyname" autofocus>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
-                                                            Display="None" ValidationGroup="CompanyName" CssClass="mpr-validation-messages" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
+                                <input id="txtMarca" runat="server" class="form-control" placeholder="Marca" name="Marca" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtMarca" Enabled="true"
                                                             Display="None" ValidationGroup="Marca" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
+                                <input id="txModelo" runat="server" class="form-control" placeholder="Modelo" name="Modelo" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtModelo" Enabled="true"
                                                             Display="None" ValidationGroup="Modelo" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtPassword" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
+                                <input id="txtNSerie" runat="server" class="form-control" placeholder="N. Serie" name="N. Serie">
                                 <asp:RequiredFieldValidator ID="NSerie" runat="server" ControlToValidate="txtNSerie" Enabled="true"
                                                             Display="None" Text="Required" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
+                                <input id="txtDescripcion" runat="server" class="form-control" placeholder="Descripción" name="Descripción" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion" Enabled="true"
                                                             Display="None" ValidationGroup="Descripción" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="txtUserName" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
+                                <input id="txtColor" runat="server" class="form-control" placeholder="Color" name="Color" autofocus>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtColor" Enabled="true"
                                                             Display="None" ValidationGroup="Color" CssClass="mpr-validation-messages" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="statusDropdown" id="statusDropdown" class=" btn btn-success dropdown-toggle btn-sm btn-block">
@@ -322,7 +273,8 @@
 
                             </div>
                         </div>
-
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="Check" id="Check" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
@@ -331,18 +283,16 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="TipoDispositivo" id="TipoDispositivo" class="btn btn-secondary dropdown-toggle btn-sm btn-block">
                                     <option selected>Tipo de Dispositivo</option>
-                                    <option value="Monitor" href="#miModal2" id="miModal2">Monitor / Pantalla</option>
-                                    <option value="Laptop" href="#" id="miModal2">Laptop</option>
-                                    <option value="Router" href="#" id="miModal2">Router</option>
-                                    <option value="Impresora" href="#" id="miModal2">Impresora</option>
-                                    <option value="Desktop" href="#" id="miModal2">Desktop</option>
+                                    <option value="Monitor" data-target="#miModal2">Monitor / Pantalla</option>
+                                    <option value="Laptop" data-target="#miModal2">Laptop</option>
+                                    <option value="Router" data-target="#miModal2">Router</option>
+                                    <option value="Impresora" data-target="#miModal2">Impresora</option>
+                                    <option value="Desktop" data-target="#miModal2">Desktop</option>
                                     <option value="WIFIRepeater">WIFI Repeater</option>
                                     <option value="Otros">Otros ________________</option>
                                 </select>
@@ -360,6 +310,34 @@
         </div>
     </div>
 
+    <!------------------------- MODAL2------------------------------>
+    <div class="modal" id="miModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <br />
+                <h6 class="modal-title">
+                    El Dispositivo que esta tratando de registrar debe pasar por la autorización de apoyo tecnico, favor de solicitarlo a traves de esa forma:
+                </h6>
+                <!-- Contenido del Modal -->
+                <!-- Pie del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" href="Devices">Saltar</button>
+                    <button type="button" class="btn" style="background-color:#2ebf63;">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div id="load"></div>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -371,20 +349,36 @@
             const select = document.getElementById('TipoDispositivo');
             select.addEventListener('change', function () {
                 const selectedOption = select.value;
+                const modalTarget = select.options[select.selectedIndex].getAttribute('data-modal-target');
 
-                if (
-                    selectedOption === 'Laptop' ||
-                    selectedOption === 'Monitor' ||
-                    selectedOption === 'Router' ||
-                    selectedOption === 'Impresora' ||
-                    selectedOption === 'Desktop'
-                ) {
-                    $('#miModal2').modal('show');
-                    // const modalMessage = document.getElementById('modal-message');
-                    // document.getElementById('modal-message').innerHTML = "El Dispositivo que está tratando de registrar debe pasar por la autorización de apoyo técnico. Favor de solicitarlo a través de esa forma.";
+                // Close miModal3 if it's open
+                $('#miModal3').modal('hide');
+
+                if (modalTarget) {
+                    // Show miModal2
+                    $(modalTarget).modal('show');
                 }
             });
         });
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const select = document.getElementById('TipoDispositivo');
+        //     select.addEventListener('change', function () {
+        //         const selectedOption = select.value;
+
+        //         if (
+        //             selectedOption === 'Laptop' ||
+        //             selectedOption === 'Monitor' ||
+        //             selectedOption === 'Router' ||
+        //             selectedOption === 'Impresora' ||
+        //             selectedOption === 'Desktop'
+        //         ) {
+        //             $('#miModal2').modal('show');
+        //         }
+        //     });
+        // });
+
+        
     </script>
 
 </body>
