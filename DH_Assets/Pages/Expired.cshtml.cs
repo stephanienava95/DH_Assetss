@@ -3,17 +3,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DH_Assets.Pages
 {
-    public class InventaryModel : PageModel
+    public class ExpiredModel : PageModel
     {
-        private readonly ILogger<InventaryModel> _logger;
+        private readonly ILogger<ExpiredModel> _logger;
 
-        public InventaryModel(ILogger<InventaryModel> logger)
+        public ExpiredModel(ILogger<ExpiredModel> logger)
         {
             _logger = logger;
         }
 
         public void OnGet()
         {
+
         }
     }
 }

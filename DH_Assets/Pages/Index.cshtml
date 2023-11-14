@@ -3,8 +3,39 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DH_Assets.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
 <html lang="en">
+    <style>
+    .glyphicon, glyphicon, #glyphicon {
+        color: seagreen;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .NewAccount, NewAccount, #NewAccount {
+        color: blue;
+        position: center;
+        align-content: center;
+    }
+
+    p1{
+        text-align:center;
+        font:bold;
+        font-size:medium;
+    }
+
+    </style>
 <body>
         <!-- Page Content-->
         <div class="container px-4 px-lg-5">
@@ -13,48 +44,48 @@
                 <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="~/assets/Business.jpeg" alt="..." /></div>
                 <div class="col-lg-5">
                     <h1 class="font-weight-light">HACIENDA</h1>
-                    <p>Aqui podra llevar un control de los consultores y equipo provistos por companias externas para el apoyo de los procesos en Hacienda</p>
-                 @*    <a class="btn btn-primary" href="#!">Call to Action!</a> *@
+                <p>Aquí podrá llevar un control de los consultores y equipo provistos por Compañías externas para el apoyo de los procesos en Hacienda</p>
+                <div class="form-group">
+                    <input id="txtUserName" runat="server" class="form-control" placeholder="User Name" name="email" autofocus>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUserName" Enabled="true"
+                                                Display="None" ValidationGroup="login" Text="Required" CssClass="mpr-validation-messages" />
+                </div>
+    
+                <div class="form-group">
+                    <input id="txtPassword" runat="server" class="form-control" placeholder="OTP" name="OTP" autofocus>
+                    <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtOTP" Enabled="true" ValidationGroup="OTP"
+                                                Display="None" Text="Required" CssClass="mpr-validation-messages" />
+                </div>
+
+                <asp:LinkButton ID="lnkLogin" runat="server" style="background-color:#2ebf63;"  class="btn btn-lg btn-block" ValidationGroup="login"
+                OnClick="btnLogin_Click">Login</asp:LinkButton>
+            </div>
+
                 </div>
             </div>
-            <!-- Call to Action-->
-@*             <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body"><p class="text-white m-0">HACIENDA</p></div>
-            </div> *@
-            <!-- Content Row-->
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                    <div class="card-body" style="background-color:#2ebf63;">
-                           @*  <h2 class="card-title">Card One</h2> *@
-                            <h3 class="card-text">Entrar y/o Actualizar equipo</h3>
-                        </div>
-                    @*     <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> *@
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                    <div class="card-body" style="background-color:#2ebf63;">
-                           @*  <h2 class="card-title">Card Two</h2> *@
-                            <h3 class="card-text">Ver equipo pendiente por aprobar</h3>
-                        </div>
-                    @*     <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> *@
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                    <div class="card-body" style="background-color:#2ebf63;">
-                            @* <h2 class="card-title">Card Three</h2> *@
-                            <h3 class="card-text">Equipo aprobado para remover</h3>
-                        </div>
-                  @*       <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> *@
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+
+        <div class="col-md-4 mb-6">
+          <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-refresh" aria-hidden="true" href="Devices">
+              </a>&nbsp;Entrar y/o Actualizar equipo</p1>
+          </div>
+     
+           <div class="col-md-4 mb-6">
+            <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-eye-open" aria-hidden="true" href="Devices">
+                </a>&nbsp;Ver equipo pendiente por aprobar</p1>
+          </div>
+
+           <div class="col-md-4 mb-6">
+            <p1 class="mpr-title-header">
+                <a class="nav-link glyphicon glyphicon-trash" aria-hidden="true" href="Devices">
+            </a>&nbsp;Equipo aprobado por remover</p1>
+           </div>
+    </div>
+    <br />
+    <br />
+    <br />
     </body>
 </html>

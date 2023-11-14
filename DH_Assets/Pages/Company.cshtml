@@ -3,108 +3,483 @@
 @{
     ViewData["Title"] = "Company Information";
 }
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell");
+        const userList = document.getElementById("user-list");
 
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell2");
+        const userList = document.getElementById("user-list2");
+
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const clickableCell = document.querySelector(".clickable-cell3");
+        const userList = document.getElementById("user-list3");
+
+        clickableCell.addEventListener("click", function () {
+            userList.classList.toggle("hidden");
+        });
+    });
+   
+</script>
 <html lang="en">
+<head>
+    <style>
+        /* Agrega estilos adicionales según sea necesario */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            margin-right: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DH_Assets.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
 <body>
     <!-- Page Content-->
     <div class="container px-4 px-lg-5">
+
+        <h2 style="text-align:center">DASHBOARD</h2>
+        <div class="col-lg-12"><img class="img-fluid rounded mb-4 mb-lg-0" src="~/assets/google.png" alt="..." /></div>
+        <br />
+        <br />
+        <p>
+            Sección dedicada a la información básica de la compañía. Esta información es necesaria para asignarle los datos
+            al inventario de Dispositivos y consultores.
+        </p>
+
         <!-- Heading Row-->
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
-
-            <h1>Compañías</h1>
-
-            <p>
-                Seccion dedicada a la informacion basica de la compania. Esta informacion es necesaria para asignarle los datos
-                al inventario de equipos y consultores.
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Compañías</h2>
+                </div>
+                <div class="col-md-3 text-right">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <div class="col-sm-1 text-right">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="checkbox-container">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="todosCheckbox" checked>
+                    <label class="form-check-label checkbox-label" for="todosCheckbox">
+                        Todos
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="activoCheckbox" checked>
+                    <label class="form-check-label checkbox-label" for="activoCheckbox">
+                        Activo
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="inactivoCheckbox" checked>
+                    <label class="form-check-label checkbox-label" for="inactivoCheckbox">
+                        Inactivo
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br/>
     <div class="container">
-     @*    <h1>Company Information</h1> *@
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Company Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Assistant's Phone</th>
-                    <th scope="col">Company Main</th>
+                    <th scope="col">Nombre de la Compañía</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Contacto</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Estatus</th>
+                    <th scope="col">Contratistas</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Company A</td>
+                   <td class="clickable-cell">Tres monjitas
+                            <div id="user-list" class="hidden">
+                                <ul>
+                                    <li>Carlos Arroyo</li>
+                                    <li>Melvin Candelaria</li>
+                                    <li>Carla Luna</li>
+                                </ul>
+                            </div>
+                   </td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
+                    <td>Oficial Principal</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                     <td>
+                    <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                        <span class="glyphicon glyphicon-edit"></span> </button>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Company B</td>
+                   <td class="clickable-cell2"> Netwave
+                            <div id="user-list2" class="hidden">
+                                <ul>
+                                    <li>Julia Santos</li>
+                                    <li>Felix Velez</li>
+                                    <li>Viviana De Pinho</li>
+                                </ul>
+                            </div>
+                   </td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
-                    <td>Support</td>
+                    <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                    </tr>
                  <tr>
-                    <td>Company C</td>
+                        <td class="clickable-cell3">   T Mobile
+                            <div id="user-list3" class="hidden">
+                                <ul>
+                                    <li>Maria Santos</li>
+                                    <li>Candelaria Soliz</li>
+                                    <li>Ingrid De Pinho</li>
+                                </ul>
+                            </div>
+                        </td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
+                    <td>Soporte</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                     <td>
+                       <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                              <span class="glyphicon glyphicon-edit"></span>
+                       </button>
+                      </td>
+                   </tr>
+     
                 <tr>
-                    <td>Company D</td>
+                    <td>T MOBILE</td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
-                    <td>Support</td>
+                    <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                        </tr>
                   <tr>
-                    <td>Company E</td>
+                    <td>MCS</td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
+                    <td>Asistente</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                        </tr>
                 <tr>
-                    <td>Company F</td>
+                    <td>Carlos Arroyo</td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
-                    <td>Support</td>
+                    <td>Servicio</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                        </tr>
                  <tr>
-                    <td>Company G</td>
+                    <td>Don Juan</td>
                     <td>123 Main St, City, Country</td>
                     <td>(123) 456-7890</td>
-                    <td>Main Contact</td>
+                    <td>Soporte</td>
                     <td>info@companya.com</td>
                     <td>Active</td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                        </tr>
                 <tr>
-                    <td>Company H</td>
+                    <td>Nuc University</td>
                     <td>456 Elm St, City, Country</td>
                     <td>(987) 654-3210</td>
-                    <td>Support</td>
+                    <td>Soporte</td>
                     <td>contact@companyb.com</td>
                     <td><span class="badge bg-danger">Inactive</span></td>
-                </tr>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#ContractorModal" class="btn btn-primary btn-sm btn-block">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </td>
+                            <td>
+                                <button type="button" data-toggle="modal" data-target="#miModal" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </button>
+                            </td>
+                        </tr>
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
     </div>
+        <ul class="pagination align-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">1</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+            </li>
+        </ul>
+
+    </div>
+
+      
+    <!------------------------- MODAL------------------------------>
+
+    <div class="modal" id="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                        <h5 class="modal-title">Editar información de la Compañía</h5>
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Contenido del Modal -->
+
+                <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class="form-group">
+                                <input id="txtCompanyName" runat="server" class="form-control" placeholder="Nombre de la Compañía">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyName" Enabled="true"
+                                                    Display="None" ValidationGroup="CompanyName"  CssClass="mpr-validation-messages" />
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group">
+                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Dirección" name="Direccion" autofocus>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyAddress" Enabled="true"
+                                                Display="None" ValidationGroup="CompanyAddress" CssClass="mpr-validation-messages" />
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Teléfono" name="Telefono" autofocus>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyPhone" Enabled="true"
+                                                    Display="None" ValidationGroup="CompanyPhone" CssClass="mpr-validation-messages" />
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group">
+                                <input id="txtPassword" runat="server" class="form-control" placeholder="Compañía" name="Compañia">
+                        <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtCompanyData" Enabled="true" 
+                                                Display="None" Text="Required" CssClass="mpr-validation-messages" />
+                </div>
+                </div>
+                </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Email" name="Email" autofocus>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCompanyEmail" Enabled="true"
+                                                    Display="None" ValidationGroup="CompanyEmail" CssClass="mpr-validation-messages" />
+                </div>
+                </div>
+  
+                 <div class="col-md-6">
+                  <div class="form-group">
+                   <select name="statusDropdown" id="statusDropdown" class=" btn btn-success dropdown-toggle btn-sm btn-block">
+                            <option selected>Estatus</option>
+                                            <option value="Activo">Activo</option>
+                                            <option value="Inactivo">Inactivo</option>
+                        </select>        
+                        </div>
+                     </div>
+                </div>
+                <!-- Pie del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
+
+    <!------------------------- MODAL CONTRACTORS------------------------------>
+
+    <div class="modal" id="ContractorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <div class="col-md-7">
+                        <h5 class="modal-title">Editar información de los Contratistas</h5>
+                    </div>
+                    <div class="w-100">
+                        <button type="button" id="closebutton" class="close ml-auto" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Contenido del Modal -->
+ 
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtconsultorName" runat="server" class="form-control" placeholder="Nombre" name="Nombre" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtconsultorName" Enabled="true"
+                                                            Display="None" ValidationGroup="txtconsultorName" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtApellidos" runat="server" class="form-control" placeholder="Dirección" name="Dirección" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtconsultorAddress" Enabled="true"
+                                                            Display="None" ValidationGroup="consultorAddress" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Teléfono" name="Teléfono" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtconsultorPhone" Enabled="true"
+                                                            Display="None" ValidationGroup="consultorPhone" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtPassword" runat="server" class="form-control" placeholder="Compañía" name="Compañía">
+                                <asp:RequiredFieldValidator ID="rfLastName" runat="server" ControlToValidate="txtconsultorData" Enabled="true"
+                                                            Display="None" Text="Required" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="txtUserName" runat="server" class="form-control" placeholder="Email" name="Email" autofocus>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtconsultorEmail" Enabled="true"
+                                                            Display="None" ValidationGroup="consultorEmail" CssClass="mpr-validation-messages" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-success dropdown-toggle btn-sm btn-block" type="button" id="statusDropdown" data-toggle="dropdown">
+                                        Estatus
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="statusDropdown">
+                                        <a class="dropdown-item" href="#">Activo</a>
+                                        <a class="dropdown-item" href="#">Inactivo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pie del Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
   <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+
 </html>
